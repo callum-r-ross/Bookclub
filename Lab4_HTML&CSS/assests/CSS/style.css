@@ -1,0 +1,9 @@
+@import "templatecolours.css";
+/* Set the body layout */
+body{
+    max-width:960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

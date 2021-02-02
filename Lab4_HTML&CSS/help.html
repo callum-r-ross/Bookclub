@@ -23,11 +23,43 @@
     </header>
     <!--Main begins-->
     <main>
+        <h2>Help With Cheese</h2>
+        <!--Form begins-->
+        <form name="help">
+            <div class="text-input">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+            </div>
 
+            <div class="text-input">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div id="fav">
+                <label for="fav">Favourite Cheese</label>
+                <label for="feta">Feta</label>
+                <input type="radio" name="fav-cheese" id="feta">
+
+                <label for="gouda">Gouda</label>
+                <input type="radio" name="fav-cheese" id="gouda">
+
+                <label for="other">Other</label>
+                <input type="radio" name="fav-cheese" id="other">
+            </div>
+
+            <div id="text-area">
+                <label for="cheese-problem">What is your cheese problem?</label>
+                <textarea name="cheese-problem" id="cheese-problem"></textarea>
+            </div>
+
+            <input type="submit" name="Submit" id="submit">
+        </form>
     </main>
     <!--Footer begins-->
     <footer>
-
+        <hr>
+        <p>&#169 The Mice People 2016</p>
     </footer>
 </body>
 </html>

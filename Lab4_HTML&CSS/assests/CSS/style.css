@@ -1,4 +1,5 @@
-@import "templatecolours.css";
+/*@import "templatecolours.css"; */
+
 /* Set the body layout */
 body{
     max-width:960px;
@@ -6,4 +7,171 @@ body{
     margin-right: auto;
 }
 
+/* Set the navigation bar */
+nav>ul{
+    list-style: none;
+    color:black ;
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    border: black solid 0.5px;
+}
 
+nav>ul>li{
+    float:left;
+}
+
+nav>ul>li a{
+    display: block;
+    text-align: center;
+    padding:10px 30px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Set the image sizes */
+#cheeselogo{
+    width:150px;
+    float: left;
+}
+
+#gouda{
+    max-width: 200px;
+    height: 150px;
+}
+
+#brie{
+    max-width: 200px;
+    height: 150px;
+}
+
+#mascarpone{
+    max-width:200px;
+    height: 150px;
+}
+
+#man{
+    width:100px;
+}
+
+/* Set flex box container for cheese jokes images*/
+#cheeses{
+    display: flex;
+    justify-content:space-between;
+    flex-direction:row;
+}
+
+/* Removes line break between headings*/
+#cheeses h2{
+    margin:0;
+}
+
+/* Decrease margin between images and paragraphs*/
+.cheese > p{
+    margin: 5px;
+    max-width: 200px;
+}
+
+/* Change the fonts */
+h1{
+    font-family: 'Roberto',sans-serif;
+    font-weight: 300;
+}
+
+h2{
+    font-family: 'Roberto' ,sans-serif;
+    font-weight: 400;
+}
+
+a{
+    font-family: 'Roberto',sans-serif;
+    font-weight: 400;
+}
+
+p{
+    font-family: 'Roberto', sans-serif;
+    font-weight: 400;
+}
+
+
+
+main>ul>li{
+    font-family: 'Roberto',sans-serif;
+    font-weight: 400;
+}
+
+/* Float the header*/
+#logo {
+    float: left;
+    display: block;
+    width: 100%;
+}
+
+/* Center the heading*/
+#logo h1{
+    position: relative;
+    text-align: center;
+}
+
+/* Set the footer */
+footer{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Font sizes*/
+h1{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 18px;
+}
+
+p{
+    font-size: 14px;
+}
+
+li{
+    font-size: 14px;
+}
+
+a{
+    font-size: 15px;
+}
+
+/* Form formatting*/
+.text-input label{
+    text-align: left;
+    width:200px;
+    float:left;
+    padding-right: 10px;
+    margin-top: 10px;
+    clear:left;
+}
+
+#options {
+    border:none;
+    text-align: left;
+    display:inline-block;
+}
+
+#fav{
+    text-align: left;
+    width:200px;
+    float:left;
+    padding-right: 10px;
+    margin-top: 10px;
+    clear:left;
+}
+
+#options,legend{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+ 

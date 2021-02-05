@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Help With Cheese</title>
+    <link rel="stylesheet" href="assests/CSS/s1.css">
 </head>
 <!--Body begins-->
 <body>
     <!--Header begins-->
     <header>
-        <img src="cheese.jpg" alt="block of cheese">
-        <h1>The Magical World of Cheese</h1>
+        <div id="logo">
+            <img src="assests/images/cheese.jpg" alt="block of cheese" id="cheeselogo">
+            <h1>The Magical World of Cheese</h1>
+        </div>
         <!--Navigation begins-->
         <nav>
             <ul>
@@ -25,36 +28,37 @@
     <main>
         <h2>Help With Cheese</h2>
         <!--Form begins-->
-        <form name="help">
-            <div class="text-input">
-                <label for="name">Name:</label>
+        <form>
+            <div>
+                <label for="name" class="formLabel">Name</label>
                 <input type="text" name="name" id="name">
             </div>
-
-            <div class="text-input">
-                <label for="email">Email:</label>
+            <div>
+                <label for="email" class="formLabel">Email</label>
                 <input type="email" name="email" id="email">
             </div>
+            <div>
+                <label class="formLabel">Favourite cheese</label>
+                <label for="gouda" class="favLabel">Gouda</label>
+                <input type="radio" name="favcheese" id="gouda">
 
-            <div id="fav">
-                <label for="fav">Favourite Cheese</label>
-                <label for="feta">Feta</label>
-                <input type="radio" name="fav-cheese" id="feta">
+                <label for="feta" class="favLabel">Feta</label>
+                <input type="radio" name="favcheese" id="feta">
 
-                <label for="gouda">Gouda</label>
-                <input type="radio" name="fav-cheese" id="gouda">
-
-                <label for="other">Other</label>
-                <input type="radio" name="fav-cheese" id="other">
+                <label for="other" class="favLabel">Other</label>
+                <input type="radio" name="favcheese" id="other">
             </div>
 
-            <div id="text-area">
-                <label for="cheese-problem">What is your cheese problem?</label>
-                <textarea name="cheese-problem" id="cheese-problem"></textarea>
+            <div >
+                <label for="problem" class="formLabel">What is your cheese problem?</label>
+                <textarea id="problem"></textarea>
             </div>
 
-            <input type="submit" name="Submit" id="submit">
+            <div>
+                <input type="submit" value="Submit">
+            </div>
         </form>
+
     </main>
     <!--Footer begins-->
     <footer>

@@ -144,34 +144,5 @@ a{
 }
 
 /* Form formatting*/
-.text-input label{
-    text-align: left;
-    width:200px;
-    float:left;
-    padding-right: 10px;
-    margin-top: 10px;
-    clear:left;
-}
-
-#options {
-    border:none;
-    text-align: left;
-    display:inline-block;
-}
-
-#fav{
-    text-align: left;
-    width:200px;
-    float:left;
-    padding-right: 10px;
-    margin-top: 10px;
-    clear:left;
-}
-
-#options,legend{
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
  

@@ -10,60 +10,68 @@
     <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel ="stylesheet" href="style.css">
-    <link rel="stylesheet" href="badcolours.css">
+    <!--<link rel="stylesheet" href="badcolours.css">-->
 
     <link rel ="stylesheet" href="ripple.min.css">
     <link rel="stylesheet" href="https://unpkg.com/     bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" >
 </head>
 <body>
-<header>
+<!--Start of container-->
+<div id="container">
+<header class="col-md-12">
     <h1>North Lab</h1>
     <h2>HCI Experiments from RGUx</h2>
 </header>
 <!--Navigation Bar-->
-<nav>
-    <ul>
-        <li><a href="#">Menu Item 1</a></li>
-        <li><a href="#">Menu Item 2</a></li>
-        <li><a href="#">Menu Item 3</a></li>
-    </ul>
+<nav class="col-md-12 navbar navbar-primary">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+            <li><a href="#">Menu Item 3</a></li>
+        </ul>
+    </div>
 </nav>
-<main>
-    <article>
+<main class="col-md-12">
+    <div id="experimentContainer" class="row">
+    <article class="col-md-3">
         <img src="placeholder.png" alt="placeholder image">
         <h3>Experiment Name</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
     </article>
-    <article>
+    <article class="col-md-3">
         <img src="placeholder.png" alt="placeholder image">
         <h3>Experiment Name</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
     </article>
-    <article>
+    <article class="col-md-3">
         <img src="placeholder.png" alt="placeholder image">
         <h3>Experiment Name</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
     </article>
-    <article>
+    <article class="col-md-3">
         <img src="placeholder.png" alt="placeholder image">
         <h3>Experiment Name</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
     </article>
+    </div>
 </main>
 
-<footer>
-    <section>
+<footer class="col-md-12">
+    <section class="col-md-4">
         <h3>Footer Section</h3>
         <p>Investors want to see information specific to your business and industry, not placeholder data from an executive summary template.</p>
     </section>
-    <section>
+    <section class="col-md-4">
         <h3>Footer Section</h3>
         <p>Investors want to see information specific to your business and industry, not placeholder data from an executive summary template.</p>
     </section>
-    <section>
+    <section class="col-md-4">
         <h3>Footer Section</h3>
         <p>Investors want to see information specific to your business and industry, not placeholder data from an executive summary template.</p>
     </section>
 </footer>
+<!--Container ends-->
+</div>
 </body>
 </html>

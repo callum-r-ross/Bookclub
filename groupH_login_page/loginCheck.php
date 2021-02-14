@@ -34,7 +34,7 @@ function checkLogin($username, $password)
    if(!isset($userAccounts[$username])){
        return(false);
    } 
-   // Else check if username has a password
+   
    return($password==$userAccounts[$username]);
 }
 

@@ -1,30 +1,13 @@
 <?php
 // Start the session
 session_start();
-//If theres no post array then the form hasn't been submitted
-if(!IsSet($_POST))
-{
-    // End session and redirect to loginPage
-    session_destroy();
-    header("Location: loginPage.php");
-    exit();
-}
-
-// If eithe username or password is not set then the form hasnt been submitted properly
-if(!IsSet($_POST["username"]) || !IsSet($_POST["password"])){
-    //End session and redirect to loginPage
-    session_destroy();
-    header("Location: loginPage.php");
-    exit();
-}
 
 /* All username and password combinations are stored in a seperate
     php file, require_once is used as the file is only needed one time. */
 require_once "userAccounts.php";
 
 // Declare functions
-/* This function returns true if the username has an associated passwordf
-    in file loginAccounts.php */
+//This function returns true if the username has an associated password in file loginAccounts.php
 function checkLogin($username, $password)
 {
     // Declare loginAccounts as a global variable
@@ -35,7 +18,26 @@ function checkLogin($username, $password)
        return(false);
    } 
    
+   // Check if entered username has an associated password
    return($password==$userAccounts[$username]);
+}
+
+// This function ends the session, redirects to the login page and exits the php script
+function redirect(){
+    session_destroy();
+    header("Location: loginPage.php");
+    exit();
+}
+
+//If theres no post array then the form hasn't been submitted, redirect function is called
+if(!IsSet($_POST))
+{
+   redirect();
+}
+
+// If the username or password is not set then the form hasnt been submitted properly, redirect function is called
+if(!IsSet($_POST["username"]) || !IsSet($_POST["password"])){
+    redirect();
 }
 
 // Set username and password variables to that from html form
@@ -49,7 +51,6 @@ if(checkLogin($username,$password)){
     exit();
 }
 
-// Else if the function returns false we redirect to login page
-session_destroy();
-header("Location: loginPage.php");
+// Else call redirect function
+redirect();
 ?> 

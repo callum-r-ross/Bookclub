@@ -8,7 +8,7 @@
     //Save username in a variable 
     $username=$_SESSION["username"];
 ?>
-<!--HTML FORM-->
+<!--HTML with links to logout page and loginPage-->
 <!DOCTYPE html>
 <html>
 <head>

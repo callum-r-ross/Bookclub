@@ -3,17 +3,17 @@
 include("connection.php");
 
 echo "<h1>Marvel Movies created by Marvel Studios</h1>";
-$m = "Marvel Studios";
 // Sql query
-$sql = "SELECT title FROM marvelmovies";
+$sql =  "SELECT * FROM `marvelmovies` WHERE `productionStudio` LIKE 'Marvel Studios'";
 
 // Variable which holds result of the search
-$result = $db->query($sql_query);
+$result = $db->query($sql);
 
 while($row = $result -> fetch_array()){
-    echo "HI";
+    echo "<p>" . $row['title'] . "</p>";
 }
 
 $result->close();
 $db->close();
+
 ?>

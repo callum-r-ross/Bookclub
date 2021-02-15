@@ -1,7 +1,7 @@
 <?php
 // Create variables to store log in information
 $servername = "localhost";
-$dbname = "smdb";
+$dbname = "marvelmovies";
 $username = "root";
 $password = "root";
 
@@ -9,9 +9,8 @@ $password = "root";
 $db = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection to db
-if ($db->connection_error){
+if ($db->connect_error){
     die("Connection failed: " . $db->connect_error);
 }
-
-echo "success";
+//echo "success";
 ?>

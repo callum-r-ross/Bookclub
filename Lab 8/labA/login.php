@@ -10,7 +10,7 @@ if(empty($_POST["username"]) || empty($_POST["password"]))
 {
     //  Assign username and password values to variables
     $username = $_POST["username"];
-    $password = $_POST["passowrd"];
+    $password = $_POST["password"];
 
     // SQL query for userid of entered username and password
     $sql = "SELECT uid FROM users WHERE username = '$username' and password = '$password'";
@@ -22,7 +22,7 @@ if(empty($_POST["username"]) || empty($_POST["password"]))
     // else something has gone wrong and we display a error message
     if(mysqli_num_rows($result) == 1)
     {
-        header("Location: home.html");
+        header("Location: home.php");
     } else {
         echo "Incorrect username or password";
     }

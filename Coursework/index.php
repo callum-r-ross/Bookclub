@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(empty($_SESSION["username"])){
+    $username = "Sign in/up";
+} else {
+    $username = $_SESSION["username"];
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang ="en">
 <head>
@@ -14,7 +25,7 @@
         <h1>Online Book Club</h1>
         <img src="images/logo.png" alt="site logo" id="logo">
         <!--Sign up/log in-->
-        <p><a href="login.html">Login/Register</a></p>
+        
         <!--Search bar-->
         <div>
             <form id="searchBar">
@@ -37,7 +48,13 @@
 
     <!--Main starts here-->
     <main>
-
+        <?php if(!isSet($_SESSION["username"])){
+            echo "<p><a href='login.html'>Login/Register</a></p>";
+        } else {
+            echo "Hello {$username}";
+        }
+        echo "<p><a href='logout.php'>Log out</a></p>";
+        ?>
         <!--Book club Section-->
         <section>
             <h2>Book club</h2>

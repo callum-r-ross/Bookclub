@@ -22,6 +22,8 @@ if(empty($_POST["username"]) || empty($_POST["password"]))
     // else something has gone wrong and we display a error message
     if(mysqli_num_rows($result) == 1)
     {
+        session_start();
+        $_SESSION["username"] = $username;
         header("Location: home.php");
     } else {
         echo "Incorrect username or password";

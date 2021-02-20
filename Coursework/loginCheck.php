@@ -3,7 +3,7 @@
 include("connection.php");
 
 // Check to see if username and password are entered
-if(! isSet($_POST["username"]) || ! isSet($_POST["password"])){
+if(empty($_POST["username"]) || empty($_POST["password"])){
     echo "Both fiels are required";
 } else {
     // Save entered username and password into variables
@@ -15,7 +15,9 @@ if(! isSet($_POST["username"]) || ! isSet($_POST["password"])){
     $result = mysqli_query($db,$sql);
 
     if(mysqli_num_rows($result) == 1){
-        header("Location: check.php");
+        session_start();
+        $_SESSION["username"] = $username;
+        header("Location: index.php");
     } else {
         echo "Error, incorrect username and password";
     }

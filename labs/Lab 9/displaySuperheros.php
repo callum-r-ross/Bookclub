@@ -22,7 +22,7 @@
         echo "<article> 
                     <h3>{$firstname} {$lastname}</h3>
                     <p>This superheros main power is {$power}</p>
-                 </arcticle>";
+                 </article>";
     }
     ?>
 </main>

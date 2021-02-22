@@ -8,7 +8,7 @@
 <header>
     <h1>The Super-Superhero System</h1>
     <h2>Display all Battles</h2>
-    <p><a href="index,php">Back Home</a></p>
+    <p><a href="index.php">Back Home</a></p>
 </header>
 <main>
     <?php

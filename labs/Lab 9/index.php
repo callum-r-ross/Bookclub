@@ -14,7 +14,7 @@
         <li><a href="insertSuperhero.php">Insert a Superhero</a><li>
         <li><a href="displaySuperheros.php">Display all Superheros</a><li>
         <li><a href="battle.php">Insert a Battle</a><li>
-        <li><a href="displayBattles.php">Display all Battles</a><li>
+        <li><a href="displayBattle.php">Display all Battles</a><li>
         <ul>
             <?php
                 include("db_connect.php");

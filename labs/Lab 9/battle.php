@@ -11,18 +11,18 @@
     <p><a href="index.php">Return Home</a></p>
 </header>
 <main>
-    <h4>Test</h4>
     <form action="insertBattle.php" method="POST">
-        <p>Select the superhero that fought in this battle</p><select name="superhero">
+        <p>Select the superhero that fought in this battle</p>
+        <select name ="superhero">
         <?php
         include("db_connect.php");
         $sql_query = "SELECT * FROM superheros";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()){
-            $firstname = $row["firstname"];
-            $lastname = $row["lastname"];
+            $firstname = $row["firstName"];
+            $lastname = $row["lastName"];
             $superheroID = $row["superheroID"];
-            echo "<option value = '{$superheroID}'>{$firstname} {$lastname} </option>";
+         echo "<option value= '{$superheroID}''>{$firstname} {$lastname}</option>";
         }
         ?>
         </select>

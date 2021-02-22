@@ -49,9 +49,9 @@ if(empty($_SESSION["username"])){
     <!--Main starts here-->
     <main>
         <?php if(!isSet($_SESSION["username"])){
-            echo "<p><a href='login.html'>Login/Register</a></p>";
+            echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
         } else {
-            echo "Hello {$username}";
+            echo "Hello, {$username}";
         }
         echo "<p><a href='logout.php'>Log out</a></p>";
         ?>
@@ -60,7 +60,7 @@ if(empty($_SESSION["username"])){
             <h2>Book club</h2>
             <img src="images/bookClb.jpg" alt="book club book cover">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Morbi tristique senectus et netus et malesuada fames ac turpis. Aenean pharetra magna ac placerat.</p>
-            <p><a href="#">Enter the book club here!</a></p>
+            <p><a href="bookClub.html">Enter the book club here!</a></p>
         </section>
 
         <!--Reviews Section-->

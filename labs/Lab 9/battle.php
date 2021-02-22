@@ -11,6 +11,7 @@
     <p><a href="index.php">Return Home</a></p>
 </header>
 <main>
+    <h4>Test</h4>
     <form action="insertBattle.php" method="POST">
         <p>Select the superhero that fought in this battle</p><select name="superhero">
         <?php
@@ -24,7 +25,8 @@
             echo "<option value = '{$superheroID}'>{$firstname} {$lastname} </option>";
         }
         ?>
-        </select><br>
+        </select>
+        <br>
         <input type = "text" name = "villan" placeholder = "Villan Faught">
         <br>
         <input type="submit" value = "Submit">

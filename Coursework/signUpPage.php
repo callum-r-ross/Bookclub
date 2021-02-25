@@ -4,7 +4,7 @@
 
 </head>
 <body>
-    <form>
+    <form method = "POST" action="reg.php">
         <div>
             <label for="firstname">Firstname</label>
             <input type="text" name="firstname" id="firstname">

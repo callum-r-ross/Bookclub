@@ -11,7 +11,7 @@ if(!isSet($_POST)){
     $surname = $_POST["surname"];
     $email = $_POST["email"];
     
-    $sql_query = "INSERT INTO cmm007 (username,password) VALUES ('$username','$password')";
+    $sql_query = "INSERT INTO userInfo (username,password,firstname,surname,email) VALUES ('$username','$password','$firstname','$surname','$email')";
 
     if(mysqli_query($db,$sql_query)){
     } else {

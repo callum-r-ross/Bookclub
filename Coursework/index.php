@@ -16,7 +16,7 @@ if(empty($_SESSION["username"])){
     <title>Callum Ross</title>
     <meta name="My webpage for CMM007 CW" content="Book review app">
     <meta name="Callum Ross">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
     <!--Header start here-->
@@ -36,7 +36,7 @@ if(empty($_SESSION["username"])){
         <!--Nav bar-->
         <nav>
             <ul>
-                <li><a href="ficReviews.html">Fiction Reviews</a></li>
+                <li><a href="try.html">Fiction Reviews</a></li>
                 <li><a href="nonFicReview.html">Non-Fiction Reviews</a></li>
                 <li><a href="childReviews.html">Children Reviews</a></li>
                 <li><a href="learnReviews.html">Learning section Reviews</a></li>
@@ -66,6 +66,7 @@ if(empty($_SESSION["username"])){
         <!--Reviews Section-->
         <section>
             <h2>Reviews</h2>
+            <p><a href="review.html">Leave a review here</a></p>
         </section>
 
         <!--About us-->

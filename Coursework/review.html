@@ -5,7 +5,7 @@
 </head>
 <body>
 <main>
-    <form>
+    <form action="addBook.php" method="POST">
         <div>
             <label for="bookTitle">Title</label>
             <input type="text" id="bookTitle" name="bookTitle">
@@ -29,7 +29,24 @@
             </select>
         </div>
         <div>
+            <label for="reccomend">Reccomend to a friend?</label>
+            <input type="radio" value="Yes" name="reccomend">
+            <input type="radio" value="No" name="reccomend">
+        </div>
+        <div>
+            <label>Out of 5 stars</label>
+            <input type="radio" value="5" name="rating">
+            <input type="radio" value="4" name="rating">
+            <input type="radio" value="3" name="rating">
+            <input type="radio" value="2" name="rating">
+            <input type="radio" value="1" name="rating">
+        </div>
+        <div>
             <input type="submit" value="Submit">
+        </div>
+        <div>
+            <textarea maxlength=100 rows=2 cols=50>
+                Give us your thoughts in 100 characters or less..</textarea>
         </div>
     </form>
 </main>

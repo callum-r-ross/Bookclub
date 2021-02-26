@@ -23,7 +23,7 @@ if(empty($_SESSION["username"])){
     <header>
         <!--Logo and Title-->
         <h1>Online Book Club</h1>
-        <img src="images/logo.png" alt="site logo" id="logo">
+        <img src="style/logo.png" alt="site logo" id="logo">
         <!--Sign up/log in-->
         
         <!--Search bar-->
@@ -58,7 +58,7 @@ if(empty($_SESSION["username"])){
         <!--Book club Section-->
         <section>
             <h2>Book club</h2>
-            <img src="images/bookClb.jpg" alt="book club book cover">
+            <img src="style/bookClb.jpg" alt="book club book cover">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Morbi tristique senectus et netus et malesuada fames ac turpis. Aenean pharetra magna ac placerat.</p>
             <p><a href="bookClub.html">Enter the book club here!</a></p>
         </section>

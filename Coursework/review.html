@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
+<header>
+    <!--Logo and Title-->
+    <h1>Online Book Club</h1>
+    <img src="style/logo.png" alt="site logo" id="logo">
+</header>
 <main>
     <form action="addBook.php" method="POST">
         <div>
@@ -19,8 +25,8 @@
             <input type="text" id="bookPublisher" name="bookPublisher">
         </div>
         <div>
-            <label for="genre">Book genre</label>
-            <select name="genre" id="genre">
+            <label for="bookGenre">Book genre</label>
+            <select name="bookGenre" id="bookGenre">
                 <option value="fiction">Fiction</option>
                 <option value="non-fiction">Non-fiction</option>
                 <option value="educational">Educational</option>
@@ -30,29 +36,34 @@
         </div>
         <div>
             <label>Reccomend to a friend?</label>
-            <label for="yesReccomend">Yes</label>
-            <input type="radio" value="Yes" name="reccomend" id="yesReccomend">
-            <label for="noReccomend">No</label>
-            <input type="radio" value="No" name="reccomend" id="noReccomend">
+            <label for="yesRecomend">Yes</label>
+            <input type="radio" value="Yes" name="bookRecomend" id="yesRecomend">
+            <label for="noRecomend">No</label>
+            <input type="radio" value="No" name="bookRecomend" id="noRecomend">
         </div>
         <div>
             <label>Out of 5</label>
             <div>
             <label for="rating1">1</label>
-            <input type="radio" value="1" name="rating" id="rating1">
+            <input type="radio" value="1" name="bookRating" id="rating1">
             <label for="rating2">2</label>
-            <input type="radio" value="2" name="rating" id="rating2">
+            <input type="radio" value="2" name="bookRating" id="rating2">
             <label for="rating3">3</label>
-            <input type="radio" value="3" name="rating" id="rating3">
+            <input type="radio" value="3" name="bookRating" id="rating3">
             <label for="rating4">4</label>
-            <input type="radio" value="4" name="rating" id="rating4">
+            <input type="radio" value="4" name="bookRating" id="rating4">
             <label for="rating 5">5</label>
-            <input type="radio" value="5" name="rating" id="rating5">
+            <input type="radio" value="5" name="bookRating" id="rating5">
         </div>
         </div>
         <div>
-            <textarea maxlength=100 rows=2 cols=50>
-                Give us your thoughts in 100 characters or less..</textarea>
+            <label for="shortReview">Give us your thoughts in 100 characters or less!</label>
+            <textarea  maxlength="100" id="shortReview" name="shortReview">
+            </textarea>
+        </div>
+        <div>
+            <label for="bookCover">Finally upload a photo if your book!</label>
+            <input type="image" name="bookCover" id="bookCover">
         </div>
         <div>
             <input type="submit" value="Submit">

@@ -42,8 +42,6 @@ if(! isSet($_POST)){
         echo "Error";
     }
 
-
-
     if(mysqli_query($db,$sql_query)){
         $fileNameNew = mysqli_insert_id($db).".".$fileActualExt;
                 $fileDestination = 'uploads/'.$fileNameNew;

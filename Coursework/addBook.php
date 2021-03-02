@@ -9,11 +9,11 @@ if(! isSet($_POST)){
     $authorFirstName = $_POST["authorFirstName"];
     $authorLastName = $_POST["authorLastName"];
     $bookPublisher = $_POST["bookPublisher"];
-    $bookRating = $_POST["bookRating"];
     $bookSummary = $_POST["bookSummary"];
+    $bookRating = $_POST["bookRating"];
+    $bookRecommended = $_POST["bookRecommended"];
 
-
-    $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher',$bookSummary')";
+    $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended')";
 
     if(mysqli_query($db,$sql_query)){
     } else {

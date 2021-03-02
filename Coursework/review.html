@@ -11,33 +11,58 @@
     <img src="style/logo.png" alt="site logo" id="logo">
 </header>
 <main>
-    <form action="addBook.php" method="POST" enctype="multipart/form-data">
-        <div>
-            <label for="bookTitle">Title</label>
-            <input type="text" id="bookTitle" name="bookTitle">
-        </div>
-        <div>
-            <label for="authorFirstName">Author first name</label>
-            <input type="text" id="authorFirstName" name="authorFirstName">
-        </div>
-        <div>
-            <label for="authorLastName">Author first name</label>
-            <input type="text" id="authorLastName" name="authorLastName">
-        </div>
-        <div>
-            <label for="bookPublisher">Publisher</label>
-            <input type="text" id="bookPublisher" name="bookPublisher">
-        </div>
-        <div>
-            <label for="bookSummary">Give us your thoughts in 100 characters or less!</label>
-            <textarea  maxlength="100" id="bookSummary" name="bookSummary">
-            </textarea>
-        </div>
-        <div>
-        <div>
-            <input type="submit" value="Submit">
-        </div>
-    </form>
+    <div>
+        <form action="addBook.php" method="POST">
+            <div>
+                <label for="bookTitle">Title</label>
+                <input type="text" name="bookTitle" id="bookTitle">
+            </div>
+            <div>
+                <label for="authorFirstName">Author first name</label>
+                <input type="text" name="authorFirstName" id="authorFirstName">
+            </div>
+            <div>
+                <label for="authorLastName">Author last name</label>
+                <input type="text" name="authorLastName" id="authorLastName">
+            </div>
+            <div>
+                <label for="bookPublisher">Publisher</label>
+                <input type="text" name="bookPublisher" id="bookPublisher">
+            </div>
+            <div>
+                <label for="bookSummary">100 character summary</label>
+                <textarea maxlength="100" name="bookSummary" id="bookSummary"></textarea>
+            </div>
+            <div>
+                <p>Rating</p>
+                <label for="rating1">1</label>
+                <input type="radio" value="1" name="bookRating" id="rating1">
+
+                <label for="rating2">2</label>
+                <input type="radio" value="2" name="bookRating" id="rating2">
+
+                <label for="rating3">3</label>
+                <input type="radio" value="3" name="bookRating" id="rating3">
+
+                <label for="rating4">4</label>
+                <input type="radio" value="4" name="bookRating" id="rating4">
+
+                <label for="rating5">5</label>
+                <input type="radio" value="5" name="bookRating" id="rating5">
+            </div>
+            <div>
+                <p>Recommend to a friend?</p>
+                <label for="noRecommended">No</label>
+                <input type="radio" value="0" name="bookRecommended" id="noRecommended">
+                
+                <label for="yesRecommended">Yes</label>
+                <input type="radio" value="1" name="bookRecommended" id="yesRecommended">
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
 </main>
 </body>
 </html>

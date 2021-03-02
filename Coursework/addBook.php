@@ -6,18 +6,19 @@ if(! isSet($_POST)){
     die();
 } else {
     $bookTitle = $_POST["bookTitle"];
-    $bookAuthor = $_POST["bookAuthor"];
+    $authorFirstName = $_POST["authorFirstName"];
+    $authorLastName = $_POST["authorLastName"];
     $bookPublisher = $_POST["bookPublisher"];
-    $genre = $_POST["genre"];
+    $bookRating = $_POST["bookRating"];
+    $bookSummary = $_POST["bookSummary"];
 
-    $sql_query = "INSERT INTO books (bookTitle,bookAuthor,bookPublisher,genre) VALUES ('$bookTitle','$bookAuthor','$bookPublisher','$genre')";
+
+    $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher',$bookSummary')";
 
     if(mysqli_query($db,$sql_query)){
-    }{
+    } else {
         echo "Error, book not added";
     }
-    echo "Book added!";
     header("Location: index.php");
-    die();
 }
 ?>

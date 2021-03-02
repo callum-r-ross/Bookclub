@@ -5,13 +5,13 @@ if(!isSet($_POST)){
     header("Location: index.php");
     die();
 } else {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $firstname = $_POST["firstname"];
-    $surname = $_POST["surname"];
-    $email = $_POST["email"];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
     
-    $sql_query = "INSERT INTO userInfo (username,password,firstname,surname,email) VALUES ('$username','$password','$firstname','$surname','$email')";
+    $sql_query = "INSERT INTO users (firstName,lastName,username,password,email) VALUES ('$firstName','$lastName','$username','$password','$email')";
 
     if(mysqli_query($db,$sql_query)){
     } else {

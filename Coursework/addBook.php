@@ -14,15 +14,13 @@ if(! isSet($_POST)){
     $bookRecommended = $_POST["bookRecommended"];
     $bookGenre = $_POST["bookGenre"];
 
-    $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre')";
+    $file = $_FILES['file'];
 
-    $file=$_FILE['file'];
-
-    $fileName = $_FILE['file']['name'];
-    $fileTmpName = $_FILE['file']['tmp_name'];
-    $fileSize = $_FILE['file']['size'];
-    $fileError = $_FILE['file']['error'];
-    $fileType = $_FILE['file']['type'];
+    $fileName = $_FILES['file']['name'];
+    $fileTmpName = $_FILES['file']['tmp_name'];
+    $fileSize = $_FILES['file']['size'];
+    $fileError = $_FILES['file']['error'];
+    $fileType = $_FILES['file']['type']; 
 
     $fileExt = explode('.',$fileName);
     $fileActualExt = strtolower(end($fileExt));
@@ -31,17 +29,24 @@ if(! isSet($_POST)){
 
     if(in_array($fileActualExt,$allowed)){
         if($fileError === 0){
-            $fileNameNew = uniqid('',true).".".$fileActualExt;
+            if($fileSize < 500000){
+                $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre')";
 
-            $fileDestination = 'uploads/'.$fileNameNew;
-
-            move_uploaded_file($fileTmpName,$fileDestination);
+                $fileNameNew = uniqid('',true).".".$fileActualExt;
+                $fileDestination = 'uploads/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination);
+                header("Location: index.php?uploadsuccess");
+            } else {
+                echo "Error";
+            }
         } else {
-            echo "there was an error";
+            echo "Error";
         }
     } else {
-        echo "Cant upload these files";
+        echo "Error";
     }
+
+
 
     if(mysqli_query($db,$sql_query)){
     } else {

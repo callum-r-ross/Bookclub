@@ -12,7 +12,7 @@
 </header>
 <main>
     <div>
-        <form action="addBook.php" method="POST">
+        <form action="addBook.php" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="bookTitle">Title</label>
                 <input type="text" name="bookTitle" id="bookTitle">
@@ -28,6 +28,16 @@
             <div>
                 <label for="bookPublisher">Publisher</label>
                 <input type="text" name="bookPublisher" id="bookPublisher">
+            </div>
+            <div>
+                <label for="bookGenre">Genre</label>
+                <select  name="bookGenre" id="bookGenre">
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-fiction</option>
+                    <option value="children">Children's</option>
+                    <option value="educational">Educational</option>
+                    <option value="audio">Audiobook</option>
+                </select>
             </div>
             <div>
                 <label for="bookSummary">100 character summary</label>
@@ -54,9 +64,12 @@
                 <p>Recommend to a friend?</p>
                 <label for="noRecommended">No</label>
                 <input type="radio" value="0" name="bookRecommended" id="noRecommended">
-                
+
                 <label for="yesRecommended">Yes</label>
                 <input type="radio" value="1" name="bookRecommended" id="yesRecommended">
+            </div>
+            <div>
+                <input type="file" name="file">
             </div>
             <div>
                 <input type="submit" value="Submit">

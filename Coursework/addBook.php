@@ -21,10 +21,11 @@ if(! isSet($_POST)){
     $bookRecommended = $_POST["bookRecommended"];
     $bookGenre = $_POST["bookGenre"];
 
-    // Get user who left reviews ID
-    $sql_userID = "SELECT userID FROM users WHERE username = '$_SESSION['username]'";
-    $result = mysqli_query($db,$sql_userID);
 
+    $username = $_SESSION["username"];
+    // Get user who left reviews ID
+    $sql_userID = "SELECT userID FROM users WHERE username = '$username'";
+    $result
     // Uploaded image variables
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];

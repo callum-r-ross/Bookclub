@@ -21,11 +21,14 @@ if(! isSet($_POST)){
     $bookRecommended = $_POST["bookRecommended"];
     $bookGenre = $_POST["bookGenre"];
 
-
+    //Get user id
     $username = $_SESSION["username"];
-    // Get user who left reviews ID
-    $sql_userID = "SELECT userID FROM users WHERE username = '$username'";
-    $result;
+    $sql_userID_query = "SELECT * FROM users WHERE username = '$username'";
+    $userID_result = $db->query($sql_userID_query);
+    $row = $userID_result->fetch_array();
+    $userID = $row["userID"];
+    
+
     // Uploaded image variables
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];
@@ -42,7 +45,7 @@ if(! isSet($_POST)){
     if(in_array($fileActualExt,$allowed)){
         if($fileError === 0){
             if($fileSize < 50000000){
-                $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre')";               
+                $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre,userID) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre','$userID')";               
             } else {
                 echo "Error";
             }

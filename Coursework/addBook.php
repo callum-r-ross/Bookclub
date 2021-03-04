@@ -25,7 +25,7 @@ if(! isSet($_POST)){
     $username = $_SESSION["username"];
     // Get user who left reviews ID
     $sql_userID = "SELECT userID FROM users WHERE username = '$username'";
-    $result
+    $result;
     // Uploaded image variables
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];

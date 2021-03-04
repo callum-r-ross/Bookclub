@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!isset($_SESSION["username"])){
+    header("Location: index.php");
+    session_destroy();
+    die();
+}
 include("connection.php");
 if(! isSet($_POST)){
     echo "Error";
@@ -15,6 +21,10 @@ if(! isSet($_POST)){
     $bookRecommended = $_POST["bookRecommended"];
     $bookGenre = $_POST["bookGenre"];
 
+    // Get user who left reviews ID
+    $sql_userID = "SELECT userID FROM users WHERE username = '$_SESSION['username]'";
+    $result = mysqli_query($db,$sql_userID);
+
     // Uploaded image variables
     $file = $_FILES['file'];
     $fileName = $_FILES['file']['name'];
@@ -30,7 +40,7 @@ if(! isSet($_POST)){
 
     if(in_array($fileActualExt,$allowed)){
         if($fileError === 0){
-            if($fileSize < 500000){
+            if($fileSize < 50000000){
                 $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre')";               
             } else {
                 echo "Error";

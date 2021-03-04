@@ -5,9 +5,7 @@ if(empty($_SESSION["username"])){
 } else {
     $username = $_SESSION["username"];
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang ="en">
@@ -66,7 +64,7 @@ if(empty($_SESSION["username"])){
         <!--Reviews Section-->
         <section>
             <h2>Reviews</h2>
-            <p><a href="review.html">Leave a review here</a></p>
+            <p><a href="review.php">Leave a review here</a></p>
         </section>
 
         <!--About us-->

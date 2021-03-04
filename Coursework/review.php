@@ -49,8 +49,8 @@ if(!isset($_SESSION["username"])){
                 </select>
             </div>
             <div>
-                <label for="bookSummary">100 character summary</label>
-                <textarea maxlength="100" name="bookSummary" id="bookSummary"></textarea>
+                <label for="bookSummary">250 character summary</label>
+                <textarea maxlength="250" name="bookSummary" id="bookSummary"></textarea>
             </div>
             <div>
                 <p>Rating</p>

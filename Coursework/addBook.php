@@ -42,10 +42,11 @@ if(! isSet($_POST)){
 
     $allowed = array('jpg','jpeg','png');
 
+
     if(in_array($fileActualExt,$allowed)){
         if($fileError === 0){
             if($fileSize < 50000000){
-                $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre,userID) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre','$userID')";               
+                $sql_query = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre,userID,bookCover) VALUES ('$bookTitle','$authorFirstName','$authorLastName','$bookPublisher','$bookSummary','$bookRating','$bookRecommended','$bookGenre','$userID','$fileActualExt')";               
             } else {
                 echo "Error";
             }
@@ -57,11 +58,13 @@ if(! isSet($_POST)){
     }
 
     if(mysqli_query($db,$sql_query)){
-        $fileNameNew = mysqli_insert_id($db).".".$fileActualExt;
-                $fileDestination = 'uploads/'.$fileNameNew;
-                move_uploaded_file($fileTmpName,$fileDestination);
-                header("Location: index.php?uploadsuccess");
-    } else {
+        $bookID = mysqli_insert_id($db);
+        $fileNameNew = $bookID.".".$fileActualExt;
+        $fileDestination = 'uploads/'.$fileNameNew;
+        move_uploaded_file($fileTmpName,$fileDestination);
+        header("Location: index.php?uploadsuccess");
+        } 
+        else {
         echo "Error, book not added";
     }
     header("Location: index.php");

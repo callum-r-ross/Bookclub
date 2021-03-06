@@ -4,15 +4,13 @@
 
 </head>
 <body>
-    <head>
-        <h1>Audiobook Reviews</h1>
+    <header>
+        <h1>Learning Book Reviews</h1>
         <p><a href="index.php">Home</a></p>
-
         <?php
         include("connection.php");
-        $sql = "SELECT * FROM bookReviews WHERE bookGenre = 'audio'";
+        $sql = "SELECT * FROM bookReviews WHERE bookGenre = 'educational'";
         $result = $db->query($sql);
-
         while($row = $result->fetch_array()){
             $bookTitle = $row["bookTitle"];
             $bookPublisher = $row["bookPublisher"];
@@ -22,7 +20,6 @@
             $bookGenre = $row["bookGenre"];
             $authorFirst = $row["authorFirstName"];
             $authorLast = $row["authorLastName"];
-            $bookID = $row["bookID"];
             $bookCoverExt = $row["bookCover"];
             $bookCover = "uploads/{$bookID}.{$bookCoverExt}";
             echo "<article>
@@ -32,11 +29,10 @@
                         <p>Genre = {$bookGenre}</p>
                         <p>Rating = {$bookRating}</p>
                         <p>Summary = {$bookSummary}</p>
-                        <img src='$bookCover'>
+                        <img src = '$bookCover'>
                         </article>";
         }
         ?>
-        
-    </head>
+    </header>
 </body>
 </html>

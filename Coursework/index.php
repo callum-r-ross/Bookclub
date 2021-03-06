@@ -35,11 +35,11 @@ if(empty($_SESSION["username"])){
         <!--Nav bar-->
         <nav>
             <ul>
-                <li><a href="try.html">Fiction Reviews</a></li>
-                <li><a href="nonFicReview.html">Non-Fiction Reviews</a></li>
-                <li><a href="childReviews.html">Children Reviews</a></li>
-                <li><a href="learnReviews.html">Learning section Reviews</a></li>
-                <li><a href="popReviews.html">Popular Book Reviews</a></li>
+                <li><a href="ficReviews.php">Fiction Reviews</a></li>
+                <li><a href="nonFicReview.php">Non-Fiction Reviews</a></li>
+                <li><a href="childReviews.php">Children Reviews</a></li>
+                <li><a href="learnReviews.php">Learning section Reviews</a></li>
+                <li><a href="popReviews.php">Popular Book Reviews</a></li>
                 <li><a href="audioReviews.php">Audiobook Reviews</a></li>
             </ul>
         </nav>

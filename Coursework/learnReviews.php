@@ -20,6 +20,7 @@
             $bookGenre = $row["bookGenre"];
             $authorFirst = $row["authorFirstName"];
             $authorLast = $row["authorLastName"];
+            $bookID = $row["bookID"];
             $bookCoverExt = $row["bookCover"];
             $bookCover = "uploads/{$bookID}.{$bookCoverExt}";
             echo "<article>

@@ -18,6 +18,7 @@ if(empty($_POST["username"]) || empty($_POST["password"])){
         session_start();
         $_SESSION["username"] = $username;
         header("Location: index.php");
+        die();
     } else {
         echo "Error, incorrect username and password";
     }

@@ -21,7 +21,7 @@ if(!isset($_SESSION["username"])){
 </header>
 <main>
     <div>
-        <form action="addBook.php" method="POST" enctype="multipart/form-data">
+        <form action="registerBook.php" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="bookTitle">Title</label>
                 <input type="text" name="bookTitle" id="bookTitle">

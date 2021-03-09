@@ -7,7 +7,6 @@ if(empty($_SESSION["username"])){
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang ="en">
 <head>
@@ -27,8 +26,8 @@ if(empty($_SESSION["username"])){
         
         <!--Search bar-->
         <div>
-            <form id="searchBar">
-                <input type ="search" id="search" name="search" placeholder="Search..">
+            <form action="reviews.php" method="POST">
+                <input type ="search" id="searchTerm" name="searchTerm" placeholder="Search..">
                 <input type="submit" value="Search">
             </form>
         </div>
@@ -40,7 +39,6 @@ if(empty($_SESSION["username"])){
                 <li><a href="childReviews.php">Children Reviews</a></li>
                 <li><a href="learnReviews.php">Learning section Reviews</a></li>
                 <li><a href="audioReviews.php">Audiobook Reviews</a></li>
-
             </ul>
         </nav>
     </header>
@@ -65,7 +63,7 @@ if(empty($_SESSION["username"])){
         <!--Reviews Section-->
         <section>
             <h2>Reviews</h2>
-            <p><a href="review.php">Leave a review here</a></p>
+            <p><a href="bookReview.php">Leave a review here</a></p>
         </section>
 
         <!--About us-->

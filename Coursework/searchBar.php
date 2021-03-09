@@ -9,8 +9,8 @@
     <img src="style/logo.png" alt="site logo" id="logo">
     <!--Search bar-->
     <div>
-        <form id="">
-            <input type ="search" id="search" name="search" placeholder="Search..">
+        <form action="" method="POST">
+            <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for Book or Author">
             <input type="submit" value="Search">
         </form>
     </div>
@@ -30,12 +30,27 @@
     <h1>Popular Book Reviews</h1>
     <p><a href="index.php">Home</a></p>
 <?php
-include("connection.php");
-session_start();
-$searchTerm = $_POST["searchTerm"];
-$sql = "SELECT * FROM bookReviews WHERE bookTitle LIKE '%$searchTerm%'";
-$result = $db->query($sql);
-while($row = $result->fetch_array()){
+$searchTerm = $_POST['searchTerm'];
+searchBar($searchTerm);
+?>
+</main>
+</body>
+</html>
+
+
+<?php
+function searchBar($searchTerm){
+$servername = "localhost";
+$dbname = "bookClub";
+$password = "root";
+$username ="root";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+$stmt = $conn->prepare("SELECT *  FROM bookReviews WHERE bookID = ?");
+$stmt->bind_param("s", $searchTerm);
+$stmt->execute();
+$result = $stmt->get_result();
+while($row = $result->fetch_assoc()){
     $bookTitle = $row["bookTitle"];
     $bookPublisher = $row["bookPublisher"];
     $bookSummary= $row["bookSummary"];
@@ -57,7 +72,6 @@ while($row = $result->fetch_array()){
                 <img src = '$bookCover'>
                 </article>";
 }
+$stmt->close();
+}
 ?>
-</main>
-</body>
-</html>

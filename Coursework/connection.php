@@ -1,7 +1,7 @@
 <?php
 // Variables to hold database information
 $servername = "localhost";
-$dbname = "bookclub";
+$dbname = "bookClub";
 $password = "root";
 $username ="root";
 

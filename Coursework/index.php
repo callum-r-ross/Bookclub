@@ -26,8 +26,8 @@ if(empty($_SESSION["username"])){
         
         <!--Search bar-->
         <div>
-            <form action="reviews.php" method="POST">
-                <input type ="search" id="searchTerm" name="searchTerm" placeholder="Search..">
+            <form action="searchBar.php" method="POST">
+                <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search..">
                 <input type="submit" value="Search">
             </form>
         </div>

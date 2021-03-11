@@ -1,16 +1,10 @@
 <?php
 session_start();
-if(!isset($_SESSION["username"])){
-    header("Location: index.php");
-    session_destroy();
-    die();
-}
+include("checkLogin.php");
 include("connection.php");
-if(! isSet($_POST)){
-    echo "Error";
-    header("Location: index.php");
-    die();
-} else {
+checkLogin($_SESSION['username']);
+checkLogin($_POST);
+
     //Get user id
     $username = $_SESSION["username"];
     $sql_userID_query = "SELECT * FROM users WHERE username = '$username'";
@@ -43,22 +37,9 @@ if(! isSet($_POST)){
 
     $allowed = array('jpg','jpeg','png');
 
-
-    if(in_array($fileActualExt,$allowed)){
-        if($fileError === 0){
-            if($fileSize < 50000000){
-                          
-            } else {
-                echo "Error";
-                header("Location: index.php");
-            }
-        } else {
-            echo "Error";
-            header("Location: index.php");
-        }
+    if(in_array($fileActualExt,$allowed) && $fileError === 0 && $fileSize < 50000000){       
     } else {
-        echo "Error";
-        header("Location: index.php");
+        echo "Error image not allowed";
     }
 
     $stmt = mysqli_stmt_init($db);
@@ -77,5 +58,5 @@ if(! isSet($_POST)){
 
         header("Location: index.php?uploadsuccess");
     }
-}
+
 ?>

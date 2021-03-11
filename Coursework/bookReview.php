@@ -1,10 +1,7 @@
 <?php
 session_start();
-if(!isset($_SESSION["username"])){
-    header("Location: index.php");
-    session_destroy();
-    die();
-}
+include("checkLogin.php");
+checkLogin($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>

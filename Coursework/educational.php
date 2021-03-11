@@ -17,13 +17,15 @@
         </div>
     <!--Nav bar-->
     <nav>
+    <nav>
         <ul>
-            <li><a href="ficReviews.php">Fiction Reviews</a></li>
-            <li><a href="nonFicReview.php">Non-Fiction Reviews</a></li>
-            <li><a href="childReviews.php">Children Reviews</a></li>
-            <li><a href="learnReviews.php">Learning section Reviews</a></li>
-            <li><a href="audioReviews.php">Audiobook Reviews</a></li>
+            <li><a href="fiction.php">Fiction Reviews</a></li>
+            <li><a href="non-fiction.php">Non-Fiction Reviews</a></li>
+            <li><a href="children.php">Children Reviews</a></li>
+            <li><a href="educational.php">Learning section Reviews</a></li>
+            <li><a href="audiobook.php">Audiobook Reviews</a></li>
         </ul>
+    </nav>
     </nav>
 </header>
 <main>

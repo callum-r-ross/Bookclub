@@ -5,26 +5,28 @@ if(!isSet($_POST)){
     header("Location: index.php");
     die();
 } else {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
+    $firstName = mysqli_real_escape_string($db,$_POST['firstName']);
+    $lastName = mysqli_real_escape_string($db,$_POST['lastName']);
+    $username = mysqli_real_escape_string($db,$_POST['username']);
+    $password = mysqli_real_escape_string($db,$_POST['password']);
+    $email = mysqli_real_escape_string($db,$_POST['email']);
+
     
     $sql = "SELECT * FROM users WHERE username = '$username'";
     $result = mysqli_query($db,$sql);
     if(mysqli_num_rows($result) != 0){
         echo "Username is taken";
     } else {
-        $sql_query = "INSERT INTO users (firstName,lastName,username,password,email) VALUES ('$firstName','$lastName','$username','$password','$email')";
+        $sql_query = "INSERT INTO users (firstName,lastName,username,password,email) VALUES ('?,?,?,?,?);";
 
-    if(mysqli_query($db,$sql_query)){
-    } else {
-        echo "Error";
-    }
-    session_start();
-    $_SESSION["username"] = $username;
-    header("Location: index.php");
-    }
+   $stmt = mysqli_stmt_init($db);
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+       echo "Error";
+   } else {
+       mysqli_stmt_bind_param($stmt,"sssss",$firstName,$lastName,$username,$password,$email);
+       mysqli_stmt_execute($stmt);
+       header("Location: index.php");
+   }
+}
 }
 ?>

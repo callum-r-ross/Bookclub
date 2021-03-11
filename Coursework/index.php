@@ -34,11 +34,11 @@ if(empty($_SESSION["username"])){
         <!--Nav bar-->
         <nav>
             <ul>
-                <li><a href="ficReviews.php">Fiction Reviews</a></li>
-                <li><a href="nonFicReview.php">Non-Fiction Reviews</a></li>
-                <li><a href="childReviews.php">Children Reviews</a></li>
-                <li><a href="learnReviews.php">Learning section Reviews</a></li>
-                <li><a href="audioReviews.php">Audiobook Reviews</a></li>
+                <li><a href="fiction.php">Fiction Reviews</a></li>
+                <li><a href="non-fiction.php">Non-Fiction Reviews</a></li>
+                <li><a href="children.php">Children Reviews</a></li>
+                <li><a href="educational.php">Educational Reviews</a></li>
+                <li><a href="audiobook.php">Audiobook Reviews</a></li>
             </ul>
         </nav>
     </header>
@@ -57,13 +57,13 @@ if(empty($_SESSION["username"])){
             <h2>Book club</h2>
             <img src="style/bookClb.jpg" alt="book club book cover">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Morbi tristique senectus et netus et malesuada fames ac turpis. Aenean pharetra magna ac placerat.</p>
-            <p><a href="bookClub.php">Enter the book club here!</a></p>
+            <p><a href="book-club.php">Enter the book club here!</a></p>
         </section>
 
         <!--Reviews Section-->
         <section>
             <h2>Reviews</h2>
-            <p><a href="bookReview.php">Leave a review here</a></p>
+            <p><a href="review.php">Leave a review here</a></p>
         </section>
 
         <!--About us-->

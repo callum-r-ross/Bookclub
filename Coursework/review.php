@@ -20,7 +20,7 @@ checkLogin($_SESSION['username']);
     <div>
         <form action="registerBook.php" method="POST" enctype="multipart/form-data">
             <div>
-                <label for="bookTitle">Title</label>
+                <label for="bookTitle" class="sr-only">Title</label>
                 <input type="text" name="bookTitle" id="bookTitle">
             </div>
             <div>

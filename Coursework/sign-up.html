@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
 <!--Header begins-->
@@ -9,23 +10,6 @@
     <!--Logo and Title-->
     <h1>Online Book Club</h1>
     <img src="style/logo.png" alt="site logo" id="logo">
-    <!--Search bar-->
-        <div>
-            <form id="searchBar" action="searchBar.php" method="POST">
-                <input type ="search" id="searchTerm" name="searchTerm" placeholder="Search..">
-                <input type="submit" value="Search">
-            </form>
-        </div>
-<!--Nav bar-->
-    <nav>
-        <ul>
-            <li><a href="ficReviews.php">Fiction Reviews</a></li>
-            <li><a href="nonFicReview.php">Non-Fiction Reviews</a></li>
-            <li><a href="childReviews.php">Children Reviews</a></li>
-            <li><a href="learnReviews.php">Learning section Reviews</a></li>
-            <li><a href="audioReviews.php">Audiobook Reviews</a></li>
-        </ul>
-    </nav>
 </header>
 <main>
     <form  action="registerUser.php" method="POST">
@@ -59,5 +43,7 @@
     </form>
 </main>
     <p><a href="index.php">Home</a></p>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>

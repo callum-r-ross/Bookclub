@@ -6,7 +6,6 @@ if(empty($_SESSION["username"])){
     $username = $_SESSION["username"];
 }
 ?>
-
 <!DOCTYPE html>
 <html lang ="en">
 <head>
@@ -14,8 +13,8 @@ if(empty($_SESSION["username"])){
     <title>Callum Ross</title>
     <meta name="My webpage for CMM007 CW" content="Book review app">
     <meta name="Callum Ross">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -23,49 +22,6 @@ if(empty($_SESSION["username"])){
 <header class="col-md-12">
     <h1>Online Book Club</h1>
     <img src="style/logo.png" alt="site logo" id="logo"> 
-</header>
-
-<!--Nav bar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
-
-  <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">Navbar</a>
-
-  <!-- Collapse button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Collapsible content -->
-  <div class="collapse navbar-collapse" id="basicExampleNav">
-
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-
-    <form class="form-inline">
-      <div class="md-form my-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="rch" aria-label="Search">
-      </div>
-    </form>
-  </div>
-  <!-- Collapsible content -->
-
-</nav>
-<!--/.Navbar-->
-
     <div>
         <form action="searchBar.php" method="POST">
             <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search..">
@@ -73,13 +29,7 @@ if(empty($_SESSION["username"])){
         </form>
     </div>
 
-<!--Nav ends-->
-
-<!--Header ends-->
-
-<!--Main starts here-->
-<main>
-<?php 
+    <?php 
 if(!isSet($_SESSION["username"])){
     echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
 } else {
@@ -87,6 +37,41 @@ if(!isSet($_SESSION["username"])){
         }
 echo "<p><a href='logout.php'>Log out</a></p>";
 ?>
+</header>
+
+<!--Nav bar-->
+<nav class="navbar navbar-expand-md navbar-light" style="background-colour: red">
+   <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#toggleMobileMenu"
+      aria-controls="toggleMobileMenu"
+      aria-expand="false"
+      aria-label="Toggle navigation"
+   >
+      <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="toggleMobileMenu">
+      <ul class="navbar-nav text-center">
+        <li><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
+        <li><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
+        <li><a class="nav-link" href="children.php">Children Reviews</a></li>
+        <li><a class="nav-link" href="educational.php">Educational Reviews</a></li>
+        <li><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+      </ul>
+   </div>
+</nav>
+<!--/.Navbar-->
+
+    
+
+<!--Nav ends-->
+
+<!--Header ends-->
+
+<!--Main starts here-->
+<main>
     <!--Book club Section-->
     <section>
         <h2>Book club</h2>
@@ -119,6 +104,6 @@ echo "<p><a href='logout.php'>Log out</a></p>";
 </footer>
 <!--Footer ends-->
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>

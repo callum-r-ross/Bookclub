@@ -24,7 +24,7 @@ if(empty($_SESSION["username"])){
     <img src="style/logo.png" alt="site logo" id="logo"> 
     <div>
         <form action="searchBar.php" method="POST">
-            <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search..">
+            <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
             <input type="submit" value="Search">
         </form>
     </div>
@@ -54,11 +54,12 @@ echo "<p><a href='logout.php'>Log out</a></p>";
    </button>
    <div class="collapse navbar-collapse" id="toggleMobileMenu">
       <ul class="navbar-nav text-center">
-        <li><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
-        <li><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
-        <li><a class="nav-link" href="children.php">Children Reviews</a></li>
-        <li><a class="nav-link" href="educational.php">Educational Reviews</a></li>
-        <li><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="children.php">Children Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="educational.php">Educational Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+        <li><a class="nav-link" href="book-club.php">Book club</a></li>
       </ul>
    </div>
 </nav>

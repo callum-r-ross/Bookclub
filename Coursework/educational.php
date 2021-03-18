@@ -5,7 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
-<div>
+<div class="container">
 <header>
     <!--Logo and Title-->
     <h1>Online Book Club</h1>
@@ -13,7 +13,7 @@
     <!--Search bar-->
         <div>
             <form id="searchBar" action="searchBar.php" method="POST">
-                <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search.." action = "">
+                <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title.." action = "">
                 <input type="submit" value="Search">
             </form>
 </div>
@@ -37,8 +37,8 @@
         <li><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
         <li><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
         <li><a class="nav-link" href="children.php">Children Reviews</a></li>
-        <li><a class="nav-link" href="educational.php">Educational Reviews</a></li>
         <li><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+        <li><a class="nav-link" href="book-club.php">Book club</a></li>
       </ul>
    </div>
 </nav>

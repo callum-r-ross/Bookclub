@@ -13,7 +13,7 @@
     <!--Search bar-->
         <div>
             <form id="searchBar" action="searchBar.php" method="POST">
-                <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search..">
+                <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
                 <input type="submit" value="Search">
             </form>
         </div>
@@ -34,9 +34,9 @@
       <ul class="navbar-nav text-center">
         <li><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
         <li><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
-        <li><a class="nav-link" href="children.php">Children Reviews</a></li>
         <li><a class="nav-link" href="educational.php">Educational Reviews</a></li>
         <li><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+        <li><a class="nav-link" href="book-club.php">Book club</a></li>
       </ul>
    </div>
 </nav>

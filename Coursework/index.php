@@ -19,24 +19,34 @@ if(empty($_SESSION["username"])){
 <body>
 <div class="container">
 <!--Header start here-->
-<header class="col-md-12">
-    <h1>Online Book Club</h1>
-    <img src="style/logo.png" alt="site logo" id="logo"> 
+<header>
+<div class="d-flex justify-content-between">
+
+<div>
+    <img src="style/logo.png" alt="site logo" id="logo" class="mt-3"> 
+</div>
+
+<div>
+    <h1 class="mt-3">Online Book Club</h1>
+</div>
+
     <div>
-        <form action="searchBar.php" method="POST">
+        <form action="searchBar.php" method="POST" class="mt-3">
             <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
             <input type="submit" value="Search">
         </form>
     </div>
-
+<div>
     <?php 
 if(!isSet($_SESSION["username"])){
-    echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
+    echo "<p class='mt-3'><a href='login.html'>Hello, Login/Register</a></p>";
 } else {
-            echo "Hello, {$username}";
+            echo "<p class='mt-3'>Hello, {$username}</p>";
         }
-echo "<p><a href='logout.php'>Log out</a></p>";
+echo "<p class='mt-3'><a href='logout.php'>Log out</a></p>";
 ?>
+</div>
+</div>
 </header>
 
 <!--Nav bar-->

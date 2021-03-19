@@ -45,14 +45,44 @@
 </nav>
 <!--/.Navbar-->
 
+
+
+<h2>Non-Fiction Reviews</h2>
+<p><a href="index.php">Home</a></p>
+
 <main>
-        <h1>Non-Fiction Reviews</h1>
-        <p><a href="index.php">Home</a></p>
-        <?php
-           include("displayGenre.php");
-           displaygenre("non-fiction");
-        ?>
+<?php
+include("connection.php");
+$sql = "SELECT * FROM bookReviews WHERE bookGenre = 'non-fiction'";
+$result = $db->query($sql);
+while($row = $result->fetch_array()){
+            $bookTitle = $row["bookTitle"];
+            $bookPublisher = $row["bookPublisher"];
+            $bookSummary= $row["bookSummary"];
+            $bookRating = $row["bookRating"];
+            $bookRecommended = $row["bookRecommended"];
+            $bookGenre = $row["bookGenre"];
+            $authorFirst = $row["authorFirstName"];
+            $authorLast = $row["authorLastName"];
+            $bookID = $row["bookID"];
+            $bookCoverExt = $row["bookCover"];
+            $bookCover = "uploads/{$bookID}.{$bookCoverExt}";
+            echo "<h5>{$bookTitle} by {$authorFirst} {$authorLast}</h5>
+            <div class='d-flex mb-3'>
+            <div class='p-2'>
+            <img src = '$bookCover' class='img2 width='170' height='170'>
+            </div>
+            <div class='p-2'>
+             <p>Publisher = {$bookPublisher}</p>
+             <p>Genre = {$bookGenre}</p>
+             <p>Rating = {$bookRating}</p>
+             <p>{$bookSummary}</p>
+             </div>
+             </div>";
+            }
+?>
 </main>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>

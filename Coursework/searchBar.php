@@ -82,16 +82,20 @@ while($row = $result->fetch_assoc()){
     $bookID = $row["bookID"];
     $bookCoverExt = $row["bookCover"];
     $bookCover = "uploads/{$bookID}.{$bookCoverExt}";
-    echo "<article>
-                <p>Title = {$bookTitle}</p>
-                <p>Author = {$authorFirst} {$authorLast}</p>
-                <p>Publisher = {$bookPublisher}</p>
-                <p>Genre = {$bookGenre}</p>
-                <p>Rating = {$bookRating}</p>
-                <p>Summary = {$bookSummary}</p>
-                <img src = '$bookCover'>
-                </article>";
+    echo "<h3>{$bookTitle} by {$authorFirst} {$authorLast}</h3>
+    <div class='d-flex mb-3'>
+    <div class='p-2'>
+    <img src = '$bookCover' class='img2 width='170' height='170'>
+    </div>
+    <div class='p-2'>
+     <p>Publisher = {$bookPublisher}</p>
+     <p>Genre = {$bookGenre}</p>
+     <p>Rating = {$bookRating}</p>
+     <p>{$bookSummary}</p>
+     </div>
+     </div>";
 }
 $stmt->close();
 }
 ?>
+            

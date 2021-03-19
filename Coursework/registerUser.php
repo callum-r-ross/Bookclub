@@ -17,14 +17,16 @@ if(!isSet($_POST)){
     if(mysqli_num_rows($result) != 0){
         echo "Username is taken";
     } else {
-        $sql_query = "INSERT INTO users (firstName,lastName,username,password,email) VALUES ('?,?,?,?,?);";
+        $sql_query = "INSERT INTO users (firstName,lastName,username,password,email) VALUES (?,?,?,?,?);";
 
    $stmt = mysqli_stmt_init($db);
-   if(!mysqli_stmt_prepare($stmt,$sql)){
+   if(!mysqli_stmt_prepare($stmt,$sql_query)){
        echo "Error";
    } else {
        mysqli_stmt_bind_param($stmt,"sssss",$firstName,$lastName,$username,$password,$email);
        mysqli_stmt_execute($stmt);
+       session_start();
+       $_SESSION['username'] = $username;
        header("Location: index.php");
    }
 }

@@ -18,26 +18,18 @@ if(empty($_SESSION["username"])){
 </head>
 <body>
 <div class="container">
+    
 <!--Header start here-->
 <header>
-<div class="d-flex justify-content-between">
+<img src="style/logo.png" alt="site logo" id="logo" class="mt-3 flex-fill"> 
+<h1 class="mt-3 flex-fill">Online Book Club</h1>
 
-<div>
-    <img src="style/logo.png" alt="site logo" id="logo" class="mt-3"> 
-</div>
-
-<div>
-    <h1 class="mt-3">Online Book Club</h1>
-</div>
-
-    <div>
-        <form action="searchBar.php" method="POST" class="mt-3">
-            <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
-            <input type="submit" value="Search">
-        </form>
-    </div>
-<div>
-    <?php 
+<form action="searchBar.php" method="POST" class="mt-3">
+    <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
+    <input type="submit" value="Search">
+</form>
+ 
+<?php 
 if(!isSet($_SESSION["username"])){
     echo "<p class='mt-3'><a href='login.html'>Hello, Login/Register</a></p>";
 } else {
@@ -45,8 +37,6 @@ if(!isSet($_SESSION["username"])){
         }
 echo "<p class='mt-3'><a href='logout.php'>Log out</a></p>";
 ?>
-</div>
-</div>
 </header>
 
 <!--Nav bar-->

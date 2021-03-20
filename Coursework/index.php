@@ -21,26 +21,10 @@ if(empty($_SESSION["username"])){
     
 <!--Header start here-->
 <header>
-<img src="style/logo.png" alt="site logo" id="logo" class="mt-3 flex-fill"> 
-<h1 class="mt-3 flex-fill">Online Book Club</h1>
+<nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
+<a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
+<a class="navbar-brand">Online Book Club</a>
 
-<form action="searchBar.php" method="POST" class="mt-3">
-    <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
-    <input type="submit" value="Search">
-</form>
- 
-<?php 
-if(!isSet($_SESSION["username"])){
-    echo "<p class='mt-3'><a href='login.html'>Hello, Login/Register</a></p>";
-} else {
-            echo "<p class='mt-3'>Hello, {$username}</p>";
-        }
-echo "<p class='mt-3'><a href='logout.php'>Log out</a></p>";
-?>
-</header>
-
-<!--Nav bar-->
-<nav class="navbar navbar-expand-md navbar-light" style="background-colour: red">
    <button
       class="navbar-toggler"
       type="button"
@@ -52,30 +36,48 @@ echo "<p class='mt-3'><a href='logout.php'>Log out</a></p>";
    >
       <span class="navbar-toggler-icon"></span>
    </button>
-   <div class="collapse navbar-collapse" id="toggleMobileMenu">
+   <div class="collapse navbar-collapse ms-auto" id="toggleMobileMenu">
       <ul class="navbar-nav text-center">
-        <li class="nav-item"><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Book Reviews
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li class="nav-item"><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
         <li class="nav-item"><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
         <li class="nav-item"><a class="nav-link" href="children.php">Children Reviews</a></li>
         <li class="nav-item"><a class="nav-link" href="educational.php">Educational Reviews</a></li>
         <li class="nav-item"><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+          </ul>
+        </li>
+        
         <li><a class="nav-link" href="book-club.php">Book club</a></li>
+
+        <li class="nav-item ms-auto"><form action="searchBar.php" method="POST" class="d-flex me-auto">
+        <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title.." class="form-control me-2">
+        <input type="submit" value="Search">
+        </form></li>
       </ul>
+      <span class="navbar-text ms-auto">
+      <?php 
+        if(!isSet($_SESSION["username"])){
+            echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
+        } else {
+            echo "<p>Hello, {$username}</p>";
+            echo "<p><a href='logout.php'>Log out</a></p>";
+        }
+    ?>
+    </span>
    </div>
 </nav>
-<!--/.Navbar-->
 
-    
-
-<!--Nav ends-->
-
-<!--Header ends-->
+</header>
 
 <!--Main starts here-->
 <main>
     <!--Book club Section-->
     <section>
-        <h2>Book club</h2>
+        <h2 class="text-center">Book club</h2>
         <img src="style/bookClb.jpg" alt="book club book cover">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Morbi tristique senectus et netus et malesuada fames ac turpis. Aenean pharetra magna ac placerat.</p>
         <p><a href="book-club.php">Enter the book club here!</a></p>
@@ -83,13 +85,51 @@ echo "<p class='mt-3'><a href='logout.php'>Log out</a></p>";
 
     <!--Reviews Section-->
     <section>
-        <h2>Reviews</h2>
+        <h2 class="text-center">Check some of are most popular book reviews below!</h2>
         <p><a href="review.php">Leave a review here</a></p>
+
+        <h3>The Giver of Stars by Jojo Moyes</h3>
+        <div class="d-flex mb-3">
+            <div class="p-2">
+            <img src = 'uploads/87.jpg' class='img2' width='170' height='170'>
+                     </div>
+                     <div class='p-2'>
+                      <p>Publisher: Penguin</p> <p>Genre: fiction</p><p>Review Rating: 5 stars</p>
+                      <hr>
+                      <p>I believe that this could truly be one of the best, if not the best book I have read. It transported me to the mountains, it took me into the small town and I felt like I was involved in a western film! A remarkable departure from previous material. </p>
+                      </div>
+                      </div>
+                      <hr>
+
+                      <h3>The Dinosaur that Pooped a Pirate by Tom Fletcher</h3>
+        <div class="d-flex mb-3">
+            <div class="p-2">
+            <img src = 'uploads/70.jpg' class='img2' width='170' height='170'>
+                     </div>
+                     <div class='p-2'>
+                      <p>Publisher: Red Fox</p> <p>Genre: children</p><p>Review Rating: 5 stars</p>
+                      <hr>
+                      <p>I really like reading this series to my son and he loves them.</p>
+                      </div>
+                      </div>
+                      <hr>
+                    
+                      <h3>How to Code: A Step-By-Step Guide to Computer Coding by Max Wainewright</h3>
+        <div class="d-flex mb-3">
+            <div class="p-2">
+            <img src = 'uploads/90.jpg' class='img2' width='170' height='170'>
+                     </div>
+                     <div class='p-2'>
+                      <p>Publisher: Sterling Children's Books</p> <p>Genre: educational</p><p>Review Rating: 5 stars</p>
+                      <hr>
+                      <p>This book is a wonderful introduction to program for older elementary and middle school kids. It covers Logo, Scratch, Python, HTML, and JavaScript in a fun and accessible way. </p>
+                      </div>
+                      </div>
     </section>
 
     <!--About us-->
     <section>
-        <h2>About us</h2>
+        <h2 class="text-center">About us</h2>
         <p>Libero id faucibus nisl tincidunt eget nullam non nisi. Ornare arcu odio ut sem. Purus ut faucibus pulvinar elementum integer enim. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Ultrices vitae auctor eu augue. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna. Eleifend donec pretium vulputate sapien nec sagittis. Platea dictumst quisque sagittis purus sit amet volutpat consequat.</p>
     </section>
 </main>

@@ -6,22 +6,12 @@
 </head>
 <body>
 <div class="container">
-<header>
-    <!--Logo and Title-->
-    <h1>Online Book Club</h1>
-    <img src="style/logo.png" alt="site logo" id="logo">
-    <!--Search bar-->
-        <div>
-            <form id="searchBar" action="searchBar.php" method="POST">
-                <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title..">
-                <input type="submit" value="Search">
-            </form>
-        </div>
-    </nav>
-</header>
 
-<!--Nav bar-->
-<nav class="navbar navbar-expand-md navbar-light" style="background-colour: red">
+<header>
+<nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
+<a href="index.php"><img src="style/logo.png" alt="site logo" id="logo"></a>
+<a class="navbar-brand">Online Book Club</a>
+
    <button
       class="navbar-toggler"
       type="button"
@@ -33,21 +23,44 @@
    >
       <span class="navbar-toggler-icon"></span>
    </button>
-   <div class="collapse navbar-collapse" id="toggleMobileMenu">
+   <div class="collapse navbar-collapse ms-auto" id="toggleMobileMenu">
       <ul class="navbar-nav text-center">
-        <li><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
-        <li><a class="nav-link" href="children.php">Children Reviews</a></li>
-        <li><a class="nav-link" href="educational.php">Educational Reviews</a></li>
-        <li><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Book Reviews
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li class="nav-item"><a class="nav-link" href="fiction.php">Fiction Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="non-fiction.php">Non-Fiction Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="children.php">Children Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="educational.php">Educational Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="audiobook.php">Audiobook Reviews</a></li>
+          </ul>
+        </li>
+        
         <li><a class="nav-link" href="book-club.php">Book club</a></li>
+
+        <li class="nav-item ms-auto"><form action="searchBar.php" method="POST" class="d-flex me-auto">
+        <input type ="text" id="searchTerm" name="searchTerm" placeholder="Search for book title.." class="form-control me-2">
+        <input type="submit" value="Search">
+        </form></li>
       </ul>
+      <span class="navbar-text ms-auto">
+      <?php 
+        if(!isSet($_SESSION["username"])){
+            echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
+        } else {
+            echo "<p>Hello, {$username}</p>";
+            echo "<p><a href='logout.php'>Log out</a></p>";
+        }
+    ?>
+    </span>
    </div>
 </nav>
-<!--/.Navbar-->
+</header>
 
 <main>
-        <h1>Fiction Book</h1>
-        <p><a href="index.php">Home</a></p>
+        <h1>Fiction Book Reviews</h1>
         <?php
          include("connection.php");
          $sql = "SELECT * FROM bookReviews WHERE bookGenre = 'fiction'";
@@ -70,9 +83,8 @@
                      <img src = '$bookCover' class='img2 width='170' height='170'>
                      </div>
                      <div class='p-2'>
-                      <p>Publisher = {$bookPublisher}</p>
-                      <p>Genre = {$bookGenre}</p>
-                      <p>Rating = {$bookRating}</p>
+                      <p>Publisher: {$bookPublisher}</p> <p>Genre: {$bookGenre}</p><p>Review Rating: {$bookRating} stars</p>
+                      <hr>
                       <p>{$bookSummary}</p>
                       </div>
                       </div>";

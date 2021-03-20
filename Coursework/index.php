@@ -13,7 +13,7 @@ if(empty($_SESSION["username"])){
     <title>Callum Ross</title>
     <meta name="My webpage for CMM007 CW" content="Book review app">
     <meta name="Callum Ross">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
@@ -21,7 +21,7 @@ if(empty($_SESSION["username"])){
     
 <!--Header start here-->
 <header>
-<nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
+<nav class="navbar navbar-custom navbar-expand-md  navbar-light" style="background-colour: red">
 <a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
 <a class="navbar-brand">Online Book Club</a>
 
@@ -61,9 +61,8 @@ if(empty($_SESSION["username"])){
       <span class="navbar-text ms-auto">
       <?php 
         if(!isSet($_SESSION["username"])){
-            echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
+            echo "<p><a href='login.html'>Login/Register</a></p>";
         } else {
-            echo "<p>Hello, {$username}</p>";
             echo "<p><a href='logout.php'>Log out</a></p>";
         }
     ?>
@@ -75,20 +74,22 @@ if(empty($_SESSION["username"])){
 
 <!--Main starts here-->
 <main>
-    <!--Book club Section-->
-    <section>
-        <h2 class="text-center">Book club</h2>
+<h2 class="text-center">Book club</h2>
+    <div class="d-flex">
+    <div class="p-2">      
         <img src="style/bookClb.jpg" alt="book club book cover">
+        </div>
+        <div class="p-2">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Morbi tristique senectus et netus et malesuada fames ac turpis. Aenean pharetra magna ac placerat.</p>
         <p><a href="book-club.php">Enter the book club here!</a></p>
-    </section>
-
+    </div>
+    </div>
     <!--Reviews Section-->
     <section>
         <h2 class="text-center">Check some of are most popular book reviews below!</h2>
         <p><a href="review.php">Leave a review here</a></p>
 
-        <h3>The Giver of Stars by Jojo Moyes</h3>
+        <h3>The Giver of Stars <small class="text-muted">by Jojo Moyes</small></h3>
         <div class="d-flex mb-3">
             <div class="p-2">
             <img src = 'uploads/87.jpg' class='img2' width='170' height='170'>
@@ -101,7 +102,7 @@ if(empty($_SESSION["username"])){
                       </div>
                       <hr>
 
-                      <h3>The Dinosaur that Pooped a Pirate by Tom Fletcher</h3>
+                      <h3>The Dinosaur that Pooped a Pirate <small class="text-muted">by Tom Fletcher</small></h3>
         <div class="d-flex mb-3">
             <div class="p-2">
             <img src = 'uploads/70.jpg' class='img2' width='170' height='170'>
@@ -114,7 +115,7 @@ if(empty($_SESSION["username"])){
                       </div>
                       <hr>
                     
-                      <h3>How to Code: A Step-By-Step Guide to Computer Coding by Max Wainewright</h3>
+                      <h3>How to Code: A Step-By-Step Guide to Computer Coding <small class="text-muted">by Max Wainewright</small></h3>
         <div class="d-flex mb-3">
             <div class="p-2">
             <img src = 'uploads/90.jpg' class='img2' width='170' height='170'>

@@ -7,9 +7,10 @@
 <body>
 <div class="container">
 
+<!--Header start here-->
 <header>
 <nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
-<a href="index.php"><img src="style/logo.png" alt="site logo" id="logo"></a>
+<a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
 <a class="navbar-brand">Online Book Club</a>
 
    <button
@@ -57,6 +58,7 @@
     </span>
    </div>
 </nav>
+
 </header>
 
 <main>
@@ -97,5 +99,6 @@
 
 </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>

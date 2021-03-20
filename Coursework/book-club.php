@@ -7,9 +7,10 @@
 <body>
 <div class="container">
 
+<!--Header start here-->
 <header>
 <nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
-<img src="style/logo.png" alt="site logo" id="logo">
+<a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
 <a class="navbar-brand">Online Book Club</a>
 
    <button
@@ -57,19 +58,26 @@
     </span>
    </div>
 </nav>
+
 </header>
 
 <!--Main begins-->
 <main>
     <h1>Welcome to the Book Club!</h1>
-
     <h2>Book of the week </h2>
+<div class="d-flex">
+    <div class="p-2">
+    
     <img src="style/warnP.jpeg" alt="book club book">
+    </div>
+    <div class="p-2">
     <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.
 
         At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues. Li nov lingua franca va esser plu simplic e regulari quam li existent Europan lingues. It va esser tam simplic quam Occidental in fact, it va esser Occidental. A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es. Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica.</p>
+    </div>
+    </div>
 </main>
-
+<br>
 <?php
 session_start();
 if($_SESSION['username'] == "admin"){
@@ -79,7 +87,6 @@ if($_SESSION['username'] == "admin"){
                 <input type='submit' value='submit'>
             </form>";
 }
-echo "<p><a href='index.php'>Home</a></p>";
 include("connection.php");
 $sql = "SELECT * FROM bookClub";
 $result = $db->query($sql);
@@ -93,16 +100,19 @@ while($row = $result->fetch_array()){
 }
 ?>
 
-<form action="addClubPost.php" method=POST>
-    <div>
-        <label for="userPost">Have your say!</label>
-        <textarea id="bookClubPost" name="bookClubPost"></textarea>
-        <input type="submit" value="Submit">
-    </div>
-</form>
+<div class="text-center" style="margin:auto;">
+<form action="addClubPost.php" method=POST style="max-width: 480px margin:auto;">
+        <label for="bookClubPost" class="mb-3">Have your say!</label>
+        <input type="text" id="bookClubPost" name="bookClubPost" class="form-control" required autofocus>
+            
+</input>
 
+    <div class="mt-3">
+                <button class="btn btn-lg btn-block btn-primary mb-2">Submit</button>
+            </div>
+</form>
+</div>
 <footer>
-    
 </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

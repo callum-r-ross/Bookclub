@@ -7,9 +7,13 @@
 <body>
 <div class="container">
 
+
+
+
+<!--Header start here-->
 <header>
 <nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
-<a href="index.php"><img src="style/logo.png" alt="site logo" id="logo"></a>
+<a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
 <a class="navbar-brand">Online Book Club</a>
 
    <button
@@ -57,6 +61,7 @@
     </span>
    </div>
 </nav>
+
 </header>
 
 <main>

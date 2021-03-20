@@ -4,7 +4,7 @@ include("connection.php");
 //Get user id
 session_start();
 if(empty($_SESSION)){
-    header("Location: bookClub.html");
+    header("Location: index.php");
     exit();
 }
 $username = $_SESSION["username"];
@@ -25,6 +25,6 @@ if(!mysqli_stmt_prepare($stmt,$sql)){
 } else {
     mysqli_stmt_bind_param($stmt,"sis",$bookClubPost,$userID,$username);
     mysqli_stmt_execute($stmt);
-    header("Location: bookClub.php");
+    header("Location: book-club.php");
 }
 ?>

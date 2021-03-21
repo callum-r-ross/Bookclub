@@ -1,6 +1,8 @@
 <?php
+//File called when admin removes post
 include("connection.php");
-//$postID = $_POST['deletePost'];
+
+//Prepared SQL statement used to prevent SQL injection
 $postID = mysqli_real_escape_string($db,$_POST['deletePost']);
 $sql = "DELETE FROM bookClub WHERE postID = ?;";
 $stmt = mysqli_stmt_init($db);

@@ -61,9 +61,9 @@ if(empty($_SESSION["username"])){
       <span class="navbar-text ms-auto">
       <?php 
         if(!isSet($_SESSION["username"])){
-            echo "<p><a href='login.html'>Login/Register</a></p>";
+            echo "<p class='me-2 mt-3'><a href='login.html'>Login/Register</a></p>";
         } else {
-            echo "<p><a href='logout.php'>Log out</a></p>";
+            echo "<p class='me-2 mt-3'><a href='logout.php'>Log out</a></p>";
         }
     ?>
     </span>
@@ -81,7 +81,7 @@ if(empty($_SESSION["username"])){
         </div>
         <div class="p-2">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Morbi tristique senectus et netus et malesuada fames ac turpis. Aenean pharetra magna ac placerat.</p>
-        <p><a href="book-club.php">Enter the book club here!</a></p>
+        <p><a href="book-club.php">Enter the book club here!</a> (Must be signed in to enter)</p>
     </div>
     </div>
     <!--Reviews Section-->
@@ -136,15 +136,28 @@ if(empty($_SESSION["username"])){
 </main>
 <!--Main ends-->
 
-<!--Footer starts here-->
+
+<!--Footer starts-->
 <footer>
-    <ul>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
-    </ul>
+    <hr>
+    <p class='text-center'>Find us on</p>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">        
+            <a href="#"><img src="style/fb.png" alt="facebook footer icon" height="60"></a>
+        </div>
+
+        <div class="p-2">
+            <a href="#"><img src="style/twit.png" alt="twitter footer icon" height="60"></a>
+        </div>
+
+        <div class="p-2">
+            <a href="#"><img src="style/insta.png" alt="instagram footer icon" height="60"></a>
+        </div>
+    </div>
+    <p class='text-center'>Created by Callum Ross &#169</p>
 </footer>
 <!--Footer ends-->
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>

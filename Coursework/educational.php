@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +12,20 @@
 <div class="container">
 
 <!--Header start here-->
+<head>
+    <meta charset="UTF-8">
+    <title>Callum Ross</title>
+    <meta name="My webpage for CMM007 CW" content="Book review app">
+    <meta name="Callum Ross">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    
+<!--Header start here-->
 <header>
-<nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
+<nav class="navbar navbar-custom navbar-expand-md  navbar-light" style="background-colour: red">
 <a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
 <a class="navbar-brand">Online Book Club</a>
 
@@ -49,10 +65,9 @@
       <span class="navbar-text ms-auto">
       <?php 
         if(!isSet($_SESSION["username"])){
-            echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
+            echo "<p class='me-2 mt-3'><a href='login.html'>Login/Register</a></p>";
         } else {
-            echo "<p>Hello, {$username}</p>";
-            echo "<p><a href='logout.php'>Log out</a></p>";
+            echo "<p class='me-2 mt-3'><a href='logout.php'>Log out</a></p>";
         }
     ?>
     </span>
@@ -62,7 +77,7 @@
 </header>
 
 <main>
-        <h1>Educational Book Reviews</h1>
+        <h1 class='text-center mt-3 mb-3'>Educational Book Reviews</h1>
         <?php
        include("connection.php");
        $sql = "SELECT * FROM bookReviews WHERE bookGenre = 'educational'";
@@ -80,7 +95,7 @@
                    $bookCoverExt = $row["bookCover"];
                    $bookCover = "uploads/{$bookID}.{$bookCoverExt}";
                    echo "<h3>{$bookTitle} by {$authorFirst} {$authorLast}</h3>
-                     <div class='d-flex mb-3'>
+                     <div class='d-flex mb-3 border'>
                      <div class='p-2'>
                      <img src = '$bookCover' class='img2 width='170' height='170'>
                      </div>
@@ -94,6 +109,26 @@
         ?>
 </main>
 </div>
+<!--Footer starts-->
+<footer>
+    <hr>
+    <p class='text-center'>Find us on</p>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">        
+            <a href="#"><img src="style/fb.png" alt="facebook footer icon" height="60"></a>
+        </div>
+
+        <div class="p-2">
+            <a href="#"><img src="style/twit.png" alt="twitter footer icon" height="60"></a>
+        </div>
+
+        <div class="p-2">
+            <a href="#"><img src="style/insta.png" alt="instagram footer icon" height="60"></a>
+        </div>
+    </div>
+    <p class='text-center'>Created by Callum Ross &#169</p>
+</footer>
+<!--Footer ends-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>
 </html>

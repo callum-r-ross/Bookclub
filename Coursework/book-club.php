@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("checkLogin.php");
+checkLogin($_SESSION['username']);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +14,20 @@
 <div class="container">
 
 <!--Header start here-->
+<head>
+    <meta charset="UTF-8">
+    <title>Callum Ross</title>
+    <meta name="My webpage for CMM007 CW" content="Book review app">
+    <meta name="Callum Ross">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    
+<!--Header start here-->
 <header>
-<nav class="navbar navbar-expand-md navbar-light mt-3" style="background-colour: red">
+<nav class="navbar navbar-custom navbar-expand-md  navbar-light" style="background-colour: red">
 <a href="index.php"><img src="style/logo.png" alt="website logo" height="80" class="mb-2"></a>
 <a class="navbar-brand">Online Book Club</a>
 
@@ -49,10 +67,9 @@
       <span class="navbar-text ms-auto">
       <?php 
         if(!isSet($_SESSION["username"])){
-            echo "<p><a href='login.html'>Hello, Login/Register</a></p>";
+            echo "<p class='me-2 mt-3'><a href='login.html'>Login/Register</a></p>";
         } else {
-            echo "<p>Hello, {$username}</p>";
-            echo "<p><a href='logout.php'>Log out</a></p>";
+            echo "<p class='me-2 mt-3'><a href='logout.php'>Log out</a></p>";
         }
     ?>
     </span>
@@ -60,7 +77,6 @@
 </nav>
 
 </header>
-
 <!--Main begins-->
 <main>
     <h1>Welcome to the Book Club!</h1>
@@ -81,7 +97,7 @@
 <?php
 session_start();
 if($_SESSION['username'] == "admin"){
-    echo "<form action='removePost.php' method='POST'>
+    echo "<form action='removePost.php' method='POST' class='mb-3'>
                 <label for='deletePost'>Enter postID of post to be deleted</label>
                 <input type='text' name='deletePost' id='deletePost'>
                 <input type='submit' value='submit'>
@@ -94,9 +110,12 @@ while($row = $result->fetch_array()){
     $bookClubPost = $row['bookClubPost'];
     $user = $row['username'];
     $post = $row['postID'];
-    echo "<article>
-                <p>{$post} {$user} - {$bookClubPost}</p>
-                </article>";
+    echo "<div class='border'>
+    <p>User {$user} says...</p>
+    <p>{$bookClubPost}</p>
+    <p>Post ID: {$post}</p>
+    </div>
+    <br>";
 }
 ?>
 
@@ -112,8 +131,26 @@ while($row = $result->fetch_array()){
             </div>
 </form>
 </div>
+<!--Footer starts-->
 <footer>
+    <hr>
+    <p class='text-center'>Find us on</p>
+    <div class="d-flex justify-content-center">
+        <div class="p-2">        
+            <a href="#"><img src="style/fb.png" alt="facebook footer icon" height="60"></a>
+        </div>
+
+        <div class="p-2">
+            <a href="#"><img src="style/twit.png" alt="twitter footer icon" height="60"></a>
+        </div>
+
+        <div class="p-2">
+            <a href="#"><img src="style/insta.png" alt="instagram footer icon" height="60"></a>
+        </div>
+    </div>
+    <p class='text-center'>Created by Callum Ross &#169</p>
 </footer>
+<!--Footer ends-->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </body>

@@ -1,10 +1,5 @@
 <?php
 session_start();
-if(empty($_SESSION["username"])){
-    $username = "Sign in/up";
-} else {
-    $username = $_SESSION["username"];
-}
 ?>
 <!DOCTYPE html>
 <html lang ="en">

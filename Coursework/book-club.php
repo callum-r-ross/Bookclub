@@ -1,8 +1,11 @@
 <?php
 session_start();
 //User can only enter if they are logged in
-include("checkLogin.php");
-checkLogin($_SESSION['username']);
+if(empty($_SESSION['username'])){
+    header("Location: index.php");
+    session_destroy();
+    exit();
+} 
 ?>
 
 <!DOCTYPE html>

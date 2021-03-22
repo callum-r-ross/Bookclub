@@ -1,9 +1,6 @@
 <?php
 session_start();
-include("checkLogin.php");
 include("connection.php");
-checkLogin($_SESSION['username']);
-checkLogin($_POST);
 
     //Get user id
     $username = $_SESSION["username"];
@@ -19,10 +16,9 @@ checkLogin($_POST);
     $bookPublisher = mysqli_real_escape_string($db,$_POST['bookPublisher']);
     $bookSummary = mysqli_real_escape_string($db,$_POST['bookSummary']);
     $bookRating = mysqli_real_escape_string($db,$_POST['bookRating']);
-    $bookRecommended = mysqli_real_escape_string($db,$_POST['bookRecommended ']);
     $bookGenre = mysqli_real_escape_string($db,$_POST['bookGenre']);
 
-    $sql = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookRecommended,bookGenre,userID,bookCover) VALUES (?,?,?,?,?,?,?,?,?,?);";
+    $sql = "INSERT INTO bookReviews (bookTitle,authorFirstName,authorLastName,bookPublisher,bookSummary,bookRating,bookGenre,userID,bookCover) VALUES (?,?,?,?,?,?,?,?,?);";
 
     // Uploaded image variables
     $file = $_FILES['file'];
@@ -48,7 +44,7 @@ checkLogin($_POST);
         echo "Error, book not added";
         } 
     else {
-        mysqli_stmt_bind_param($stmt,"sssssiisss",$bookTitle,$authorFirstName,$authorLastName,$bookPublisher,$bookSummary,$bookRating,$bookRecommended,$bookGenre,$userID,$fileActualExt);
+        mysqli_stmt_bind_param($stmt,"sssssisss",$bookTitle,$authorFirstName,$authorLastName,$bookPublisher,$bookSummary,$bookRating,$bookGenre,$userID,$fileActualExt);
         mysqli_stmt_execute($stmt);
 
         $bookID = mysqli_insert_id($db);
@@ -56,7 +52,7 @@ checkLogin($_POST);
         $fileDestination = 'uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName,$fileDestination);
 
-        header("Location: index.php?uploadsuccess");
+        header("Location: index.php");
     }
 
 ?>

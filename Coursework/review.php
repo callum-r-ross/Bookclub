@@ -1,8 +1,11 @@
 <?php
 session_start();
 //User must be logged in to leave a review
-include("checkLogin.php");
-checkLogin($_SESSION['username']);
+if(empty($_SESSION['username'])){
+    header("Location: index.php");
+    session_destroy();
+    exit();
+} 
 ?>
 
 <!DOCTYPE html>
